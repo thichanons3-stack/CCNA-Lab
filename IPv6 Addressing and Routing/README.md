@@ -28,3 +28,27 @@
   R2(config)# ipv6 route 2001:db8::/64 2001:db8:0:1::1
   R2(config)# ipv6 route 2001:db8:0:3::/64 2001:db8:0:2::1
   ```
+## Troubleshooting Highlights
+* **ปัญหาที่เจอ (Problem):** ในตอนแรกตั้งค่า IP และ Static Route ถูกต้องแล้ว แต่ PC1 ไม่สามารถ Ping ไปหา R2 (2001:db8:0:1::2) ได้
+* **สาเหตุ (Root Cause):** Router ของ Cisco โดยค่าเริ่มต้นจะยังไม่ทำการ Forward แพ็กเก็ต IPv6 จนกว่าจะเปิดใช้งาน IPv6 Routing
+* **แนวทางแก้ไข (Solution):** พิมพ์คำสั่ง ipv6 unicast-routing ใน Global Configuration Mode บน R1, R2 และ R3
+
+## Final Verification
+1. **ตรวจสอบตารางการจัดเส้นทางบน R1 (show ipv6 route):**
+  ```text
+  S   2001:DB8:0:2::/64 [1/0] via 2001:DB8:0:1::2
+  S   2001:DB8:0:3::/64 [1/0] via 2001:DB8:0:1::2
+  ```
+2. **ทดสอบการเชื่อมต่อแบบ End-to-End (Ping PC1 -> PC2):**
+   * **พิมพ์สั่ง Ping จาก PC1 ไปยัง EUI-64 IPv6 Address ของ PC2:**
+    
+   ```text
+   PC1#ping 2001:DB8:0:3:201:C7FF:FE50:8E8A
+   ```
+   * **ผลลัพธ์:**
+   ```text
+   Type escape sequence to abort.
+   Sending 5, 100-byte ICMP Echos to 2001:DB8:0:3:201:C7FF:FE50:8E8A, timeout is 2 seconds:
+   !!!!!
+   Success rate is 100 percent (5/5), round-trip min/avg/max = 0/1/4 ms
+   ```
