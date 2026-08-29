@@ -7,5 +7,16 @@
 - การทำความเข้าใจขอบเขตของ **Layer 2 Broadcast Domain** และบทบาทของ Next-Hop MAC Address เมื่อแพ็กเก็ตเดินทางข้าม Subnet
 
 ## Network  Topology
-<img scr=>
+<img width="auto" height="auto" scr="https://github.com/thichanons3-stack/CCNA-Lab/blob/main/The%20Life%20of%20a%20Packet%20/12%20The%20Life%20of%20a%20Packet.jpg">
 
+## Key Configuration Steps
+
+### 1. การเปิดใช้งาน DNS Lookup และกำหนด Name Server บน Routers
+กำหนดให้ R1, R2 และ R3 ใช้งาน DNS Server IP `10.10.10.10` เพื่อแปลง Hostname เป็น IP Address:
+
+* **R1, R2, R3 Configuration:**
+  ```text
+  การตั้งค่าของ R2 และ R3 เหมือนกับ R1
+  R1(config)# ip domain-lookup
+  R1(config)# ip name-server 10.10.10.10
+  ```
