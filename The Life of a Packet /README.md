@@ -7,7 +7,7 @@
 - การทำความเข้าใจขอบเขตของ **Layer 2 Broadcast Domain** และบทบาทของ Next-Hop MAC Address เมื่อแพ็กเก็ตเดินทางข้าม Subnet
 
 ## Network  Topology
-<img width="auto" height="auto" scr="https://github.com/thichanons3-stack/CCNA-Lab/blob/main/The%20Life%20of%20a%20Packet%20/12%20The%20Life%20of%20a%20Packet.jpg">
+<img width="615" height="407" alt="12 The Life of a Packet" src="https://github.com/user-attachments/assets/ccf642e9-4d67-4efa-946f-9879142022c5" />
 
 ## Key Configuration Steps
 
