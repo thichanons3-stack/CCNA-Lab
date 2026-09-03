@@ -1,0 +1,47 @@
+!
+hostname SP1
+!
+!
+ip dhcp excluded-address 203.0.113.1 203.0.113.12
+!
+ip dhcp pool Flackbox
+ network 203.0.113.0 255.255.255.240
+ default-router 203.0.113.1
+!
+!
+!
+no ip domain lookup
+!
+!
+interface FastEthernet0/0
+ ip address 203.0.113.1 255.255.255.240
+ no shutdown
+!
+interface FastEthernet0/1
+ ip address 203.0.113.17 255.255.255.240
+ no shutdown
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+!
+interface FastEthernet1/1
+ no ip address
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end

@@ -12,11 +12,11 @@
 ยินดีต้อนรับสู่คลังรวบรวมแบบฝึกหัดปฏิบัติการ (**Hands-on Labs**), ไฟล์จำลองเครือข่าย (**Packet Tracer Files**), ค่าการตั้งค่าอุปกรณ์จริง (**Running Configs**), และบันทึกการวิเคราะห์แก้ไขปัญหา (**Troubleshooting Documentation**) สำหรับการเตรียมสอบและเสริมสร้างทักษะระดับมืออาชีพตามหลักสูตร **Cisco Certified Network Associate (CCNA 200-301)**
 
 ### 🎯 เป้าหมายของโครงการ (Project Objectives)
-Repository นี้ไม่ได้จัดทำขึ้นเพียงเพื่อบันทึกคำสั่ง CLI แต่เน้นกระบวนการเรียนรู้เชิงลึก:
+Repository นี้จัดทำขึ้นโดยเน้นการเรียนรู้แบบลงมือปฏิบัติจริงและการคิดวิเคราะห์เชิงลึก:
 1. **เข้าใจกลไกของโปรโตคอล (Deep Protocol Understanding):** ทำความเข้าใจเส้นทางการเดินทางของข้อมูล (Packet Flow), กลไก ARP, การทำงานของ DNS, การแบ่ง Broadcast Domain ใน Layer 2 และการส่งต่อแพ็กเก็ตข้ามเครือข่ายใน Layer 3
 2. **ฝึกการแก้ไขปัญหาอย่างเป็นระบบ (Systematic Troubleshooting):** ฝึกฝนกระบวนการค้นหาจุดบกพร่องตามแนวคิด Hop-by-Hop Isolation, การวิเคราะห์สถานะ Interface, Routing Table, Name Resolution และการบันทึก Root Cause Analysis (ปัญหา -> สาเหตุ -> การแก้ไข -> ผลการทดสอบ)
-3. **ทบทวนและทำซ้ำได้ (Reproducibility & Practical Practice):** จัดเก็บไฟล์ Topology `.pkt` และไฟล์การตั้งค่าของ Router/Switch เพื่อให้สามารถนำกลับมาเปิดทดสอบ ทบทวน หรือพัฒนาต่อได้สะดวก
-4. **สร้างเอกสารอ้างอิงคุณภาพสูง (Quality Documentation):** แต่ละโฟลเดอร์แล็บมี `README.md` เฉพาะตัว พร้อมรูป Topology, อธิบายคำสั่งหลัก และขั้นตอนการ Verify อย่างชัดเจน
+3. **ทบทวนและทำซ้ำได้ (Reproducibility & Practical Practice):** จัดเก็บไฟล์ Topology `.pkt`, เอกสารโจทย์และเฉลยคู่มือ (PDFs), และไฟล์ Configuration ของ Router/Switch ไว้อย่างเป็นระเบียบในทุกแล็บ
+4. **สร้างเอกสารอ้างอิงคุณภาพสูง (Quality Documentation):** แต่ละโฟลเดอร์แล็บมี `README.md` เฉพาะตัว พร้อมรูป Topology, คำอธิบายคำสั่งหลัก และขั้นตอนการ Verify ผลลัพธ์
 
 ---
 
@@ -24,49 +24,64 @@ Repository นี้ไม่ได้จัดทำขึ้นเพียง
 
 ```text
 CCNA-Lab/
-├── 📄 README.md                                          <-- เอกสารภาพรวมหลัก (ไฟล์นี้)
-├── 📁 12 The Life of a Packet/                           <-- แล็บการเดินทางของแพ็กเก็ต & ARP Cache
+├── 📄 README.md                                               <-- เอกสารภาพรวมหลัก (ไฟล์นี้)
+├── 📁 12 - The Life of a Packet/                             <-- แล็บการเดินทางของแพ็กเก็ต & ARP Cache
 │   ├── README.md
 │   ├── 12 The Life of a Packet.pkt
 │   ├── 12 The Life of a Packet.jpg
+│   ├── 12 The Life of a Packet Lab Exercise.pdf
+│   ├── 12 The Life of a Packet Answer Key.pdf
 │   └── Configs/ (R1, R2, R3 running-config.txt)
-├── 📁 13 Cisco Troubleshooting Methodology & DNS.../     <-- แล็บเทคนิคการแก้ปัญหาแบบ Hop-by-Hop & DNS
+├── 📁 13 - Cisco Troubleshooting Methodology & DNS Resolution/ <-- แล็บเทคนิคการแก้ปัญหาแบบ Hop-by-Hop & DNS
 │   ├── README.md
 │   ├── 13 The Cisco Troubleshooting Methodology.pkt
 │   ├── 13 The Cisco Troubleshooting Methodology.jpg
+│   ├── 13 The Cisco Troubleshooting Methodology Lab Exercise.pdf
+│   ├── 13 The Cisco Troubleshooting Methodology Answer Key.pdf
 │   └── Configs/ (R1, R2, R3 running-config.txt)
-├── 📁 14+Cisco+Router+and+Switch+Basics+Lab+Exercises/   <-- พื้นฐานการตั้งค่า Router และ Switch เบื้องต้น
+├── 📁 14 - Cisco Router and Switch Basics/                    <-- พื้นฐานการตั้งค่า Router และ Switch เบื้องต้น
+│   ├── README.md
 │   ├── 14 Cisco Router and Switch Basics.pkt
+│   ├── 14 Cisco Router and Switch Basics.jpg
 │   ├── 14 Cisco Router and Switch Basics Lab Exercise.pdf
 │   ├── 14 Cisco Router and Switch Basics Answer Key.pdf
-│   └── 14 Cisco Router and Switch Basics Configs/
-├── 📁 NAT/                                               <-- แล็บ Network Address Translation
+│   └── Configs/ (r1.txt, r2.txt)
+├── 📁 22 - VLAN and Inter-VLAN Routing/                      <-- แล็บการแบ่ง VLAN และการ Routing ข้าม VLAN
+│   ├── README.md
+│   ├── 22-1 VLAN and Inter-VLAN Routing Configuration.pkt
+│   ├── 22-1 VLAN and Inter-VLAN Routing Configuration.jpg
+│   ├── 22-1 VLAN and Inter-VLAN Routing Configuration Lab Exercise.pdf
+│   └── 22-1 VLAN and Inter-VLAN Routing Configuration Answer Key.pdf
+├── 📁 29 - NAT Configuration/                                <-- แล็บ Network Address Translation (Static, Dynamic, PAT)
+│   ├── README.md
 │   ├── 29-1 NAT Configuration.pkt
+│   ├── 29-1 NAT Configuration.JPG
 │   ├── 29-1 NAT Configuration Lab Exercise.pdf
 │   ├── 29-1 NAT Configuration Answer Key.pdf
-│   └── 29-1 NAT Configuration Configs.zip
-├── 📁 IPv6 Addressing and Routing/                       <-- แล็บ IPv6, EUI-64 และ Static Routing
+│   └── Configs/ (R1.txt, SP1.txt)
+├── 📁 30 - IPv6 Addressing and Routing/                       <-- แล็บ IPv6, EUI-64 และ Static Routing
 │   ├── README.md
-│   ├── IPv6 Configuration Completed.pkt
+│   ├── 30-1 IPv6 Configuration Completed.pkt
 │   ├── 30-1 IPv6 Configuration.JPG
+│   ├── 30-1 IPv6 Configuration Lab Exercise.pdf
+│   ├── 30-1 IPv6 Configuration Answer Key.pdf
 │   └── Configs/ (R1, R2, R3 running-config.txt)
-├── 📁 ccna/                                              <-- รวมโจทย์แบบฝึกหัด & เฉลยหลักสูตร CCNA ครอบคลุมทุกโมดูล
-│   └── (PDF Lab Exercises, Answer Keys และภาพ Topology สำหรับ OSPF, STP, EtherChannel, VLANs, Security ฯลฯ)
-└── 📄 Vlan1.pkt                                          <-- ไฟล์ทดสอบการตั้งค่า VLAN เบื้องต้น
+└── 📁 Course Reference Materials/                            <-- คลังโจทย์ แบบฝึกหัด และเฉลยต้นฉบับครบทุกโมดูล (Sections 11 - 37)
 ```
 
 ---
 
 ## 📑 สารบัญและสถานะแล็บ (Lab Directory & Roadmap)
 
-| โฟลเดอร์แล็บ | หัวข้อหลัก (Core Topic) | เทคโนโลยี / โปรโตคอลสำคัญ | สิ่งที่มีในโฟลเดอร์ |
+| โฟลเดอร์แล็บ | หัวข้อหลัก (Core Topic) | เทคโนโลยี / โปรโตคอลสำคัญ | เอกสารและไฟล์ที่มีในโฟลเดอร์ |
 |---|---|---|---|
-| [12 The Life of a Packet](./12%20The%20Life%20of%20a%20Packet%20/) | Packet Delivery Process & ARP Analysis | DNS Client, ARP Flow, Next-Hop MAC Address, Broadcast Domain | ✅ README, .pkt, Configs, Topology |
-| [13 Cisco Troubleshooting Methodology](./13%20Cisco%20Troubleshooting%20Methodology%20%26%20DNS%20Resolution/) | การวิเคราะห์ปัญหาเครือข่ายเป็นลำดับขั้น | Hop-by-Hop Isolation, Interface Status, DNS Name Resolution | ✅ README, .pkt, Configs, Topology |
-| [14 Cisco Router and Switch Basics](./14%2BCisco%2BRouter%2Band%2BSwitch%2BBasics%2BLab%2BExercises/) | พื้นฐานการบริหารจัดการอุปกรณ์ Cisco | Hostname, Interface IP, Exec-timeout, CLI Basics | 📄 .pkt, Configs, Lab Exercise, Answer Key |
-| [IPv6 Addressing and Routing](./IPv6%20Addressing%20and%20Routing/) | การกำหนดแอดเดรสและการเราต์ติ้ง IPv6 | Global Unicast (GUA), Link-Local (LLA), EUI-64, Static Route | ✅ README, .pkt, Configs, Topology |
-| [NAT](./NAT/) | Network Address Translation | Static NAT, Dynamic NAT, Port Address Translation (PAT) | 📄 .pkt, Lab Exercise, Answer Key, Configs |
-| [ccna (Extended Exercises)](./ccna/) | คลังโจทย์และเฉลยแบบฝึกหัด CCNA ฉบับสมบูรณ์ | OSPF, STP, EtherChannel, HSRP, DHCP, Device Security, Wireless | 📚 เอกสารโจทย์, ไดอะแกรม และเฉลยครบทุกหมวดหมู่ |
+| [12 - The Life of a Packet](./12%20-%20The%20Life%20of%20a%20Packet/) | Packet Delivery Process & ARP Analysis | DNS Client, ARP Flow, Next-Hop MAC Address, Broadcast Domain | ✅ README, .pkt, Configs, PDFs, Topology |
+| [13 - Cisco Troubleshooting Methodology](./13%20-%20Cisco%20Troubleshooting%20Methodology%20%26%20DNS%20Resolution/) | การวิเคราะห์ปัญหาเครือข่ายเป็นลำดับขั้น | Hop-by-Hop Isolation, Interface Status, DNS Name Resolution | ✅ README, .pkt, Configs, PDFs, Topology |
+| [14 - Cisco Router and Switch Basics](./14%20-%20Cisco%20Router%20and%20Switch%20Basics/) | พื้นฐานการบริหารจัดการอุปกรณ์ Cisco | Hostname, Interface IP, Exec-timeout, CLI Navigation | ✅ README, .pkt, Configs, PDFs, Topology |
+| [22 - VLAN and Inter-VLAN Routing](./22%20-%20VLAN%20and%20Inter-VLAN%20Routing/) | การแบ่งส่วนเครือข่ายและการเราต์ติ้งข้าม VLAN | 802.1Q Trunking, Access Ports, Router-on-a-Stick (ROAS) | ✅ README, .pkt, PDFs, Topology |
+| [29 - NAT Configuration](./29%20-%20NAT%20Configuration/) | Network Address Translation | Static NAT, Dynamic NAT, Port Address Translation (PAT) | ✅ README, .pkt, Configs, PDFs, Topology |
+| [30 - IPv6 Addressing and Routing](./30%20-%20IPv6%20Addressing%20and%20Routing/) | การกำหนดแอดเดรสและการเราต์ติ้ง IPv6 | Global Unicast (GUA), Link-Local (LLA), EUI-64, Static Route | ✅ README, .pkt, Configs, PDFs, Topology |
+| [Course Reference Materials](./Course%20Reference%20Materials/) | คลังโจทย์และเฉลยแบบฝึกหัด CCNA ฉบับสมบูรณ์ | OSPF, STP, EtherChannel, HSRP, DHCP, Device Security, Wireless | 📚 เอกสารโจทย์, ไดอะแกรม และเฉลยครบทุกโมดูล (Sections 11 - 37) |
 
 ---
 
@@ -81,7 +96,7 @@ CCNA-Lab/
 2. **IP Routing & Switching Technologies:**
    - การคอนฟิกและวิเคราะห์ Static Routing, Default Routing ทั้งบน IPv4 และ IPv6
    - การเปิดใช้งาน IPv6 Unicast Routing (`ipv6 unicast-routing`)
-   - การจัดการ VLAN, Inter-VLAN Routing และ Trunking
+   - การจัดการ VLAN, Inter-VLAN Routing (Router-on-a-Stick) และ 802.1Q Trunking
    - แนวคิดการทำงานของ Dynamic Routing Protocols (OSPF, IGP Fundamentals)
 
 3. **Network Services & Optimization:**
@@ -90,7 +105,7 @@ CCNA-Lab/
 
 4. **Hands-on Troubleshooting Framework:**
    - **Layer 1 - Layer 3 Connectivity:** การใช้ `show ip interface brief`, ตรวจสอบพอร์ต `administratively down`, และการทดสอบเส้นทางด้วย `traceroute`
-   - **Application / Services Verification:** ตรวจสอบ DNS configuration บน Router และการ Ping ด้วย Hostname แทน IP
+   - **Application / Services Verification:** ตรวจสอบ DNS Configuration บน Router และการ Ping ด้วย Hostname แทน IP
 
 ---
 
@@ -114,7 +129,7 @@ cd CCNA-Lab
 1. เลือกหัวข้อแล็บที่สนใจจากสารบัญ
 2. ดับเบิลคลิกไฟล์ `.pkt` ในโฟลเดอร์นั้นเพื่อเปิดใน **Cisco Packet Tracer**
 3. อ่านเอกสาร `README.md` ประจำแล็บเพื่อดูภาพรวมและเป้าหมายของแล็บ
-4. ทดสอบพิมพ์คำสั่ง CLI ตามคู่มือ หรือตรวจสอบผลการคอนฟิกจากไฟล์ในโฟลเดอร์ `Configs/`
+4. ศึกษาคู่มือโจทย์จากไฟล์ `*Lab Exercise.pdf` และสามารถตรวจสอบเฉลยได้จาก `*Answer Key.pdf` หรือไฟล์การตั้งค่าจริงในโฟลเดอร์ `Configs/`
 
 ### 3. ตรวจสอบการทำงานและทดสอบผล (Verify & Test)
 ใช้คำสั่งตรวจสอบมาตรฐานบน Cisco CLI เช่น:
