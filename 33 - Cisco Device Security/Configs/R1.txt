@@ -1,0 +1,9 @@
+hostname R1
+!
+interface GigabitEthernet0/0
+ ip address 10.0.0.1
+ no shutdown
+!
+interface GigabitEthernet0/1
+ ip address 10.0.1.1
+ no shutdown

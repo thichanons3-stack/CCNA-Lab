@@ -50,11 +50,16 @@ CCNA-Lab/
 │   ├── 29-1 NAT Configuration.pkt
 │   ├── 29-1 NAT Configuration.JPG
 │   └── Configs/ (R1.txt, SP1.txt)
-└── 📁 30 - IPv6 Addressing and Routing/                       <-- แล็บ IPv6, EUI-64 และ Static Routing
+├── 📁 30 - IPv6 Addressing and Routing/                       <-- แล็บ IPv6, EUI-64 และ Static Routing
+│   ├── README.md
+│   ├── 30-1 IPv6 Configuration Completed.pkt
+│   ├── 30-1 IPv6 Configuration.JPG
+│   └── Configs/ (R1, R2, R3 running-config.txt)
+└── 📁 33 - Cisco Device Security/                             <-- แล็บการรักษาความปลอดภัยอุปกรณ์ & SSH
     ├── README.md
-    ├── 30-1 IPv6 Configuration Completed.pkt
-    ├── 30-1 IPv6 Configuration.JPG
-    └── Configs/ (R1, R2, R3 running-config.txt)
+    ├── 33-1 Cisco Device Security Configuration.pkt
+    ├── 33-1 Cisco Device Security Configuration.jpg
+    └── Configs/ (R1.txt)
 ```
 
 ---
@@ -69,6 +74,7 @@ CCNA-Lab/
 | [22 - VLAN and Inter-VLAN Routing](./22%20-%20VLAN%20and%20Inter-VLAN%20Routing/) | การแบ่งส่วนเครือข่ายและการเราต์ติ้งข้าม VLAN | 802.1Q Trunking, Access Ports, Router-on-a-Stick (ROAS) | ✅ README, .pkt, Topology |
 | [29 - NAT Configuration](./29%20-%20NAT%20Configuration/) | Network Address Translation | Static NAT, Dynamic NAT, Port Address Translation (PAT) | ✅ README, .pkt, Configs, Topology |
 | [30 - IPv6 Addressing and Routing](./30%20-%20IPv6%20Addressing%20and%20Routing/) | การกำหนดแอดเดรสและการเราต์ติ้ง IPv6 | Global Unicast (GUA), Link-Local (LLA), EUI-64, Static Route | ✅ README, .pkt, Configs, Topology |
+| [33 - Cisco Device Security](./33%20-%20Cisco%20Device%20Security/) | การรักษาความปลอดภัยอุปกรณ์และการเข้าถึง | Enable Secret, Local User, SSH v2, Login Block, Password Encryption | ✅ README, .pkt, Configs, Topology |
 
 ---
 
