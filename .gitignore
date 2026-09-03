@@ -1,0 +1,12 @@
+# macOS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Proprietary course materials & PDFs (Copyright protection)
+*.pdf
+Course Reference Materials/
+*.zip
+
